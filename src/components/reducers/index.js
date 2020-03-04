@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 import { loginFormReducer } from "./loginReducer";
 import { signupReducer } from "./signUpReducer";
-import { journalListReducer } from "./JournalListReducer";
-import { journalPageReducer } from "./journalPageReducer";
-import { addJournalReducer } from "./addJournalReducer";
+import { journalListReducer } from "./PostListReducer";
+import { journalPageReducer } from "./PostpageReducer";
+import { addJournalReducer } from "./addPostReducers";
 
 export default combineReducers({
   loginFormReducer,

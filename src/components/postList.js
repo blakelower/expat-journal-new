@@ -12,7 +12,7 @@ function JournalList(props) {
 
   const onLogout = e => {
     localStorage.removeItem("token");
-    history.push("/login");
+    history.push("/");
   };
 
   return (
