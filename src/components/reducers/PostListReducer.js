@@ -4,8 +4,6 @@ const initialValues = {
   journals: []
 };
 
-//GETTING ALL JOURNALS AND ADDING NEW JOURNAL reducer and DELETING
-
 export const journalListReducer = (state = initialValues, action) => {
   switch (action.type) {
     case types.GET_POST_START:
