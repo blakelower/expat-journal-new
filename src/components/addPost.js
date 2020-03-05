@@ -1,9 +1,9 @@
 import React from "react";
 import { useHistory, Link } from "react-router-dom";
-import { createNewPost, addPost } from "./actions/actionCreators";
+import { createNewPost, addPost } from "../actions/actionCreators";
 import { connect } from "react-redux";
 
-function AddJournal(props) {
+function AddPost(props) {
   const history = useHistory();
 
   const onChange = e => {
@@ -48,6 +48,28 @@ function AddJournal(props) {
             onChange={onChange}
           />
         </label>
+        <label className="f4 fw6 ph0 mh0">
+          Add an Image
+          <input
+            className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+            type="url"
+            name="image_url"
+            placeholder="Enter Image URL"
+            value={props.image_url}
+            onChange={onChange}
+          />
+        </label>
+        <label className="f4 fw6 ph0 mh0">
+          Add an Caption
+          <input
+            className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+            type="text"
+            name="caption"
+            placeholder="Enter Caption"
+            value={props.caption}
+            onChange={onChange}
+          />
+        </label>
         <br/>
         <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">Post</button>
         <br/>
@@ -59,11 +81,13 @@ function AddJournal(props) {
 
 const mapStateToProps = state => {
   return {
-    message: state.addJournalReducer.message,
-    location: state.addJournalReducer.location
+    message: state.addPostReducer.message,
+    location: state.addPostReducer.location,
+    caption: state.addPostReducer.caption,
+    image_url: state.addPostReducer.image_url
   };
 };
 
 export default connect(mapStateToProps, { createNewPost, addPost })(
-  AddJournal
+  AddPost
 );

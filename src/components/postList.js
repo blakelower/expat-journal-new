@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { getPost } from "./actions/actionCreators";
+import { getPost } from "../actions/actionCreators";
 
-function JournalList(props) {
+function PostList(props) {
   const history = useHistory();
 
   useEffect(() => {
@@ -17,22 +17,26 @@ function JournalList(props) {
 
   return (
     <div>
+      <h2>Welcome</h2>
       <h3> Your Feed </h3>
       <Link to="/addpost">
-        <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">Add New Journal</button>
+        <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">Add New Journal Entry</button>
       </Link>
       <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray" onClick={onLogout}>Log out</button>
       <br></br>
-      {props.journals.map(item => (
+      {props.journals.map(state => (
         <Link
-          to={`/postlist/${item.id}`}
-          key={item.id}>
+          to={`/postlist/${state.id}`}
+          key={state.id}
+          style={{ textDecoration: "none" }}>
           <div className="center mw5 mw6-ns hidden ba mv4">
             <p className="f4 bg-near-black white mv0 pv2 ph3">
-            🚕: {item.last_name} {item.first_name}
+            🚕: {state.last_name} {state.first_name}
             </p>
-            <p>🌏: {item.location}</p>
-            <p>💬: {item.message}</p>
+            <p>🌏: {state.location}</p>
+            <p>💬: {state.message}</p>
+            <img>{state.image_url}</img>
+            <p>{state.caption}</p>
           </div>
         </Link>
       ))}
@@ -42,8 +46,8 @@ function JournalList(props) {
 
 const mapStateToProps = state => {
   return {
-    journals: state.journalListReducer.journals
+    journals: state.postListReducer.journals
   };
 };
 
-export default connect(mapStateToProps, { getPost })(JournalList);
+export default connect(mapStateToProps, { getPost })(PostList);

@@ -1,9 +1,9 @@
 import React from "react";
 import { useHistory, useParams, Link } from "react-router-dom";
-import {updateEditPost, updatePostChange} from "./actions/actionCreators";
+import {updateEditPost, updatePostChange} from "../actions/actionCreators";
 import { connect } from "react-redux";
 
-function UpdateJournal(props) {
+function UpdatePost(props) {
   const history = useHistory();
   const { id } = useParams();
 
@@ -13,7 +13,6 @@ function UpdateJournal(props) {
       inputValue: e.target.value
     });
   };
-
   const onSubmit = e => {
     e.preventDefault();
     props.updateEditPost({
@@ -25,7 +24,6 @@ function UpdateJournal(props) {
     });
     history.go(-1);
   };
-
   return (
     <div>
       <h3>Update Post</h3>
@@ -56,7 +54,7 @@ function UpdateJournal(props) {
           Image: <br></br>
           <input
             className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-            type="text"
+            type="url"
             name="image_url"
             placeholder="Change Image"
             value={props.image_url}
@@ -82,12 +80,13 @@ function UpdateJournal(props) {
 }
 const mapStateToProps = state => {
   return {
-    message: state.addJournalReducer.message,
-    location: state.addJournalReducer.location
+    message: state.addPostReducer.message,
+    location: state.addPostReducer.location,
+    caption: state.addPostReducer.caption,
+    image_url: state.addPostReducer.image_url
   };
 };
-
 export default connect(mapStateToProps, {
   updateEditPost,
   updatePostChange
-})(UpdateJournal);
+})(UpdatePost);

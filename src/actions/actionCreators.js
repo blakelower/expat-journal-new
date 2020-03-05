@@ -12,13 +12,11 @@ export const login = ({ email, password }) => dispatch => {
   dispatch({
     type: types.LOGIN_SUCCESS
   });
-
   axiosWithAuth()
     .post("api/v1/auth/login", {
       email,
       password
     })
-
     .then(res => {
       localStorage.setItem("token", res.data.token);
       dispatch({
@@ -47,7 +45,6 @@ export const signup = ({
   dispatch({
     type: types.SIGNUP_SUCCESS
   });
-
   axiosWithAuth()
     .post("api/v1/auth/signup", {
       email,
@@ -56,7 +53,6 @@ export const signup = ({
       first_name,
       last_name
     })
-
     .then(res => {
       localStorage.setItem("token", res.data.token);
       dispatch({
@@ -74,7 +70,6 @@ export const getPost = () => dispatch => {
   dispatch({
     type: types.GET_POST_START
   });
-
   axiosWithAuth()
     .get("/api/v1/journals")
     .then(res => {
@@ -92,7 +87,6 @@ export const getIdPost = id => dispatch => {
   dispatch({
     type: types.GET_ID_POST_START
   });
-
   axiosWithAuth()
     .get(`api/v1/journals/${id}`)
     .then(res => {
@@ -107,16 +101,16 @@ export const getIdPost = id => dispatch => {
     });
 };
 
-
-export const createNewPost = ({ message, location }) => dispatch => {
+export const createNewPost = ({ message, location, image_url, caption }) => dispatch => {
   dispatch({
     type: types.POST_NEW_POST_START
   });
-
   axiosWithAuth()
     .post("api/v1/journals", {
       message,
-      location
+      location,
+      image_url, 
+      caption
     })
     .then(res => {
       console.log(res.data);

@@ -4,7 +4,7 @@ const initialValues = {
   journal: []
 };
 
-export const journalPageReducer = (state = initialValues, action) => {
+export const postPageReducer = (state = initialValues, action) => {
   switch (action.type) {
     case types.GET_ID_POST_START:
       return initialValues;

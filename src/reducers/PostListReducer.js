@@ -4,7 +4,7 @@ const initialValues = {
   journals: []
 };
 
-export const journalListReducer = (state = initialValues, action) => {
+export const postListReducer = (state = initialValues, action) => {
   switch (action.type) {
     case types.GET_POST_START:
       return initialValues;
@@ -13,7 +13,6 @@ export const journalListReducer = (state = initialValues, action) => {
       {
         console.log(action.payload);
       }
-
       return {
         ...state,
         journals: action.payload

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useHistory, useParams, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { getIdPost, deletePost } from "./actions/actionCreators";
+import { getIdPost, deletePost } from "../actions/actionCreators";
 
-function JournalPage(props) {
+function PostPage(props) {
   const { id } = useParams();
   const history = useHistory();
 
@@ -32,6 +32,7 @@ function JournalPage(props) {
           User Name: {props.journal.last_name} {props.journal.first_name}
         </p>
         <p> Location: {props.journal.location}</p>
+        <img>{props.journal.image_url}</img>
         <p> Caption: {props.journal.message}</p>
         <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray" onClick={edit}>Edit</button>
         <br/>
@@ -43,10 +44,10 @@ function JournalPage(props) {
 
 const mapStateToProps = state => {
   return {
-    journal: state.journalPageReducer.journal
+    journal: state.postPageReducer.journal
   };
 };
 
 export default connect(mapStateToProps, { getIdPost, deletePost })(
-  JournalPage
+  PostPage
 );
