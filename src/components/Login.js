@@ -69,8 +69,8 @@ function Login(props) {
 
 const mapStateToProps = state => {
   return {
-    email: state.loginFormReducer.loginInput.email,
-    password: state.loginFormReducer.loginInput.password
+    email: state.loginReducer.loginInput.email,
+    password: state.loginReducer.loginInput.password
   };
 };
 

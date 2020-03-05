@@ -8,7 +8,7 @@ const initialValues = {
   isLoading: false
 };
 
-export const loginFormReducer = (state = initialValues, action) => {
+export const loginReducer = (state = initialValues, action) => {
   switch (action.type) {
     case types.LOGIN_START:
       return {

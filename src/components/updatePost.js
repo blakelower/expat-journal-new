@@ -86,7 +86,7 @@ const mapStateToProps = state => {
     image_url: state.addPostReducer.image_url
   };
 };
-export default connect(mapStateToProps, {
+export default connect(mapStateToProps,{
   updateEditPost,
   updatePostChange
 })(UpdatePost);
