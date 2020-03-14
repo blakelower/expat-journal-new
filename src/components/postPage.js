@@ -32,7 +32,7 @@ function PostPage(props) {
           User Name: {props.journal.last_name} {props.journal.first_name}
         </p>
         <p> Location: {props.journal.location}</p>
-        <img>{props.journal.image_url}</img>
+        {/* <img>{props.journal.image_url}</img> */}
         <p> Caption: {props.journal.message}</p>
         <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray" onClick={edit}>Edit</button>
         <br/>
