@@ -19,8 +19,6 @@ function UpdatePost(props) {
       id,
       message: props.message,
       location: props.location,
-      image_url: props.image_url,
-      caption: props.caption
     });
     history.go(-1);
   };
@@ -50,7 +48,7 @@ function UpdatePost(props) {
             onChange={onChange}
           />
         </label>
-        <label className="f4 fw6 ph0 mh0">
+        {/* <label className="f4 fw6 ph0 mh0">
           Image: <br></br>
           <input
             className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
@@ -60,8 +58,8 @@ function UpdatePost(props) {
             value={props.image_url}
             onChange={onChange}
           />
-        </label>
-        <label className="f4 fw6 ph0 mh0">
+        </label> */}
+        {/* <label className="f4 fw6 ph0 mh0">
           Caption: <br></br>
           <input
             className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
@@ -71,7 +69,7 @@ function UpdatePost(props) {
             value={props.caption}
             onChange={onChange}
           />
-        </label>
+        </label> */}
         <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">Update</button>
         <Link to="/postlist" className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">Go Home</Link>
       </form>

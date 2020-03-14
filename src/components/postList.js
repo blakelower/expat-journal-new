@@ -31,11 +31,11 @@ function PostList(props) {
           style={{ textDecoration: "none" }}>
           <div className="center mw5 mw6-ns hidden ba mv4">
             <p className="f4 bg-near-black white mv0 pv2 ph3">
-            🚕: {state.last_name} {state.first_name}
+            {state.last_name} {state.first_name}
             </p>
-            <p>🌏: {state.location}</p>
-            <p>💬: {state.message}</p>
-            <img>{state.image_url}</img>
+            <img alt={state.location} src={state.image_url} style={{width:'400px', height: '400px', objectFit: 'cover'}}/>
+            <p>{state.location}</p>
+            <p>{state.message}</p>
             <p>{state.caption}</p>
           </div>
         </Link>

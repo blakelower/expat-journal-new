@@ -101,7 +101,7 @@ export const getIdPost = id => dispatch => {
     });
 };
 
-export const createNewPost = ({ message, location, image_url, caption }) => dispatch => {
+export const createNewPost = ({ message, location, image_url }) => dispatch => {
   dispatch({
     type: types.POST_NEW_POST_START
   });
@@ -109,8 +109,7 @@ export const createNewPost = ({ message, location, image_url, caption }) => disp
     .post("api/v1/journals", {
       message,
       location,
-      image_url, 
-      caption
+      image_url
     })
     .then(res => {
       console.log(res.data);
