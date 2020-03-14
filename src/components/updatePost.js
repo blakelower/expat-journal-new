@@ -1,12 +1,37 @@
 import React from "react";
 import { useHistory, useParams, Link } from "react-router-dom";
-import {updateEditPost, updatePostChange} from "../actions/actionCreators";
+import { updateEditPost, updatePostChange } from "../actions/actionCreators";
 import { connect } from "react-redux";
+import axios from "axios";
 
 function UpdatePost(props) {
   const history = useHistory();
   const { id } = useParams();
 
+  const formElement = React.createRef();
+  const [uploading, setUploading] = React.useState(false);
+  const [image_url, setImage_url] = React.useState("");
+  const upload = e => {
+    e.persist();
+    setUploading(true);
+    const token = localStorage.getItem("token");
+    axios({
+      method: "post",
+      url: "https://expat-journals.herokuapp.com/api/v1/journals/upload",
+      headers: {
+        "Content-Type": "application/form-data",
+        Authorization: token
+      },
+      data: new FormData(formElement.current)
+    })
+      .then(res => {
+        setImage_url(res.data.image_url);
+        setUploading(false);
+      })
+      .catch(err => {
+        setUploading(false);
+      });
+  };
   const onChange = e => {
     props.updatePostChange({
       inputName: e.target.name,
@@ -18,7 +43,7 @@ function UpdatePost(props) {
     props.updateEditPost({
       id,
       message: props.message,
-      location: props.location,
+      location: props.location
     });
     history.go(-1);
   };
@@ -26,8 +51,13 @@ function UpdatePost(props) {
     <div>
       <h3>Update Post</h3>
       <form onSubmit={onSubmit}>
+        <form ref={formElement}>
+          <input name="image_url" type="file" onChange={upload} />
+        </form>
+        {uploading && <p>uploading now...</p>}
+        {image_url && <img src={image_url} alt="imageup" />}
         <label className="f4 fw6 ph0 mh0">
-          Message: 
+          Message:
           <input
             className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
             type="text"
@@ -70,8 +100,15 @@ function UpdatePost(props) {
             onChange={onChange}
           />
         </label> */}
-        <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">Update</button>
-        <Link to="/postlist" className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">Go Home</Link>
+        <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">
+          Update
+        </button>
+        <Link
+          to="/postlist"
+          className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray"
+        >
+          Go Home
+        </Link>
       </form>
     </div>
   );
@@ -84,7 +121,7 @@ const mapStateToProps = state => {
     image_url: state.addPostReducer.image_url
   };
 };
-export default connect(mapStateToProps,{
+export default connect(mapStateToProps, {
   updateEditPost,
   updatePostChange
 })(UpdatePost);

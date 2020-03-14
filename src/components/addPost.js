@@ -81,17 +81,6 @@ function AddPost(props) {
             onChange={onChange}
           />
         </label>
-        {/* <label className="f4 fw6 ph0 mh0">
-          Add an Image
-          <input
-            className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-            type="url"
-            name="image_url"
-            placeholder="Enter Image URL"
-            value={props.image_url}
-            onChange={onChange}
-          />
-        </label>
         <label className="f4 fw6 ph0 mh0">
           Add an Caption
           <input
@@ -102,13 +91,13 @@ function AddPost(props) {
             value={props.caption}
             onChange={onChange}
           />
-        </label> */}
+        </label>
         <br/>
         <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">Post</button>
         <br/>
         <Link to="/postlist" className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">Go Home</Link>
       </form>
-    </div>
+      </div>
   );
 }
 

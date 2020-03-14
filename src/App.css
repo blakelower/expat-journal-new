@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+.back{
+  /* background-image: url(./components/images/grad.jpg);
+   */
+   background: linear-gradient(#E0BBE4, #D291BC, #FFDFD3) no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

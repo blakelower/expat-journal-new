@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getPost } from "../actions/actionCreators";
+import './styles/tachyon.css';
+
 
 function PostList(props) {
   const history = useHistory();
@@ -15,8 +17,9 @@ function PostList(props) {
     history.push("/");
   };
 
+
   return (
-    <div>
+    <div className="back">
       <h2>Welcome</h2>
       <h3> Your Feed </h3>
       <Link to="/addpost">

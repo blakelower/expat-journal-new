@@ -151,7 +151,7 @@ export function updatePostChange({ inputName, inputValue }) {
   };
 }
 
-export const updateEditPost = ({ id, message, location, image_url, caption }) => dispatch => {
+export const updateEditPost = ({ id, message, location, image_url }) => dispatch => {
   dispatch({
     type: types.UPDATE_POST_START
   });
@@ -159,8 +159,7 @@ export const updateEditPost = ({ id, message, location, image_url, caption }) =>
     .put(`api/v1/journals/${id}`, {
       message,
       location,
-      image_url,
-      caption
+      image_url 
     })
     .then(res => {
       dispatch({

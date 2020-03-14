@@ -1,7 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { useHistory, Link} from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { signup, signInput } from "../actions/actionCreators";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 function SignUp(props) {
   const history = useHistory();
@@ -27,6 +29,13 @@ function SignUp(props) {
 
   return (
     <div className="pa4 black-80">
+      <Loader
+        type="Puff"
+        color="#00BFF"
+        height={100}
+        width={100}
+        timeout={3000}
+      />
       <h3>New to Expat Journal? Signup Today!</h3>
       <form className="measure center" onSubmit={onSign}>
         <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
@@ -44,7 +53,7 @@ function SignUp(props) {
           <br />
           <label className="f4 fw6 ph0 mh0">
             Last Name:
-            <input   
+            <input
               className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
               type="text"
               name="last_name"
@@ -89,11 +98,13 @@ function SignUp(props) {
               onChange={handleChange}
             />
           </label>
-          <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">Sign Up </button>
+          <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">
+            Sign Up{" "}
+          </button>
         </fieldset>
         <Link to="/login" class="f6 link dim black db">
-            Already have an account? Login!
-          </Link>
+          Already have an account? Login!
+        </Link>
       </form>
     </div>
   );

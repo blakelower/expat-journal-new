@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 import { changeLogin, login } from "../actions/actionCreators";
+import Loader from "react-loader-spinner";
 
 function Login(props) {
   const history = useHistory();
@@ -24,6 +25,13 @@ function Login(props) {
 
   return (
     <div className="pa4 black-80">
+       <Loader
+        type="Puff"
+        color="#00BFF"
+        height={100}
+        width={100}
+        timeout={3000}
+      />
       <h3> Missed Us? Log Right Back In! </h3>
       <form className="measure center" onSubmit={onLogin}>
         <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
@@ -64,8 +72,9 @@ function Login(props) {
         </div>
       </form>
     </div>
-  );
-}
+    );
+  }
+
 
 const mapStateToProps = state => {
   return {
