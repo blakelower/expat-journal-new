@@ -1,9 +1,9 @@
-import React from "react";
+import React  from "react";
 import { connect } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 import { signup, signInput } from "../actions/actionCreators";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from "react-loader-spinner";
+// import {withFormik, Form, Field, ErrorMessage} from "formik";
+// import * as Yup from "yup";
 
 function SignUp(props) {
   const history = useHistory();
@@ -15,6 +15,7 @@ function SignUp(props) {
     });
   };
 
+  
   const onSign = e => {
     e.preventDefault();
     props.signup({
@@ -29,13 +30,6 @@ function SignUp(props) {
 
   return (
     <div className="pa4 black-80">
-      <Loader
-        type="Puff"
-        color="#00BFF"
-        height={100}
-        width={100}
-        timeout={3000}
-      />
       <h3>New to Expat Journal? Signup Today!</h3>
       <form className="measure center" onSubmit={onSign}>
         <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
@@ -48,6 +42,7 @@ function SignUp(props) {
               placeholder="Enter F Name"
               value={props.first_name}
               onChange={handleChange}
+              required
             />
           </label>
           <br />
@@ -60,6 +55,7 @@ function SignUp(props) {
               placeholder="Enter L Name"
               value={props.last_name}
               onChange={handleChange}
+              required
             />
           </label>
           <br />
@@ -72,6 +68,7 @@ function SignUp(props) {
               placeholder="Enter Email"
               value={props.email}
               onChange={handleChange}
+              required
             />
           </label>
           <br />
@@ -84,6 +81,7 @@ function SignUp(props) {
               placeholder="Enter Password"
               value={props.password}
               onChange={handleChange}
+              required
             />
           </label>
           <br />
@@ -96,6 +94,7 @@ function SignUp(props) {
               placeholder="Confirm Password"
               value={props.confirm_password}
               onChange={handleChange}
+              required
             />
           </label>
           <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">
@@ -106,9 +105,11 @@ function SignUp(props) {
           Already have an account? Login!
         </Link>
       </form>
-    </div>
+      </div>
   );
 }
+
+
 
 const mapStateToProps = state => {
   return {

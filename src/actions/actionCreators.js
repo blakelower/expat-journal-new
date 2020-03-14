@@ -20,10 +20,14 @@ export const login = ({ email, password }) => dispatch => {
     .then(res => {
       localStorage.setItem("token", res.data.token);
       dispatch({
-        type: types.LOGIN_FAILED
+        type: types.LOGIN_POST
       });
     })
     .catch(err => {
+      dispatch({
+        type: types.LOGIN_FAILED,
+        payload: err.response
+      })
       console.log(err);
     });
 };

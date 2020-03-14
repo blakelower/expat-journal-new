@@ -3,6 +3,8 @@ export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_POST = "LOGIN_POST";
 export const LOGIN_FAILED = "LOGIN_FAILED";
+export const POST_CLEAR_LOGIN = "POST_CLEAR_LOGIN";
+
 //SIGNUP
 export const SIGNUP_START = "SIGNUP_START";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";

@@ -25,13 +25,15 @@ function Login(props) {
 
   return (
     <div className="pa4 black-80">
+      {props.isLoading && (
        <Loader
         type="Puff"
         color="#00BFF"
         height={100}
         width={100}
-        timeout={3000}
+        timeout={300}
       />
+      )}
       <h3> Missed Us? Log Right Back In! </h3>
       <form className="measure center" onSubmit={onLogin}>
         <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
@@ -79,7 +81,8 @@ function Login(props) {
 const mapStateToProps = state => {
   return {
     email: state.loginReducer.loginInput.email,
-    password: state.loginReducer.loginInput.password
+    password: state.loginReducer.loginInput.password,
+    isLoading: state.loginReducer.isLoading
   };
 };
 

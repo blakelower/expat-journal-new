@@ -5,7 +5,8 @@ const initialValues = {
     email: "",
     password: ""
   },
-  isLoading: false
+  isLoading: false, 
+  error: ""
 };
 
 export const loginReducer = (state = initialValues, action) => {
@@ -30,6 +31,7 @@ export const loginReducer = (state = initialValues, action) => {
       };
     case types.LOGIN_FAILED:
       return initialValues;
+      
     default:
       return state;
   }
