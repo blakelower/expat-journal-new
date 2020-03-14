@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getPost } from "../actions/actionCreators";
-import './styles/tachyon.css';
-
 
 function PostList(props) {
   const history = useHistory();

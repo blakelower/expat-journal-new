@@ -3,12 +3,31 @@
 }
 
 .back{
-  /* background-image: url(./components/images/grad.jpg);
-   */
    background: linear-gradient(#E0BBE4, #D291BC, #FFDFD3);
    padding-bottom: 30px;
    padding-top: 10px;
    min-height: 100vh;
+}
+
+.add{
+  background: linear-gradient(#afff94, #fdfd96, #94dbff);
+  padding-bottom: 30px;
+  padding-top: 10px;
+  min-height: 100vh;
+}
+
+.backg{
+  background: linear-gradient(#afff94, #fdfd96, #94dbff);
+  padding-bottom: 30px;
+  padding-top: 10px;
+  min-height: 100vh;
+}
+
+.up{
+  background: linear-gradient(#ade6d0, #ebcdee, #94dbff);
+  padding-bottom: 30px;
+  padding-top: 10px;
+  min-height: 100vh;
 }
 
 .App-logo {

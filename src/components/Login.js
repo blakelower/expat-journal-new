@@ -24,7 +24,7 @@ function Login(props) {
   };
 
   return (
-    <div className="pa4 black-80">
+    <div className="pa4 black-80 up">
       {props.isLoading && (
        <Loader
         type="Puff"

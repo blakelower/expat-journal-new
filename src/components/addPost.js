@@ -51,7 +51,7 @@ function AddPost(props) {
   };
 
   return (
-    <div>
+    <div className="add">
       <h3> Add A New Post From Your Super Fun Adventure! </h3>
       <form ref={formElement}>
         <input name="image_url" type="file" onChange={upload}/>

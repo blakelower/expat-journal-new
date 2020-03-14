@@ -48,7 +48,7 @@ function UpdatePost(props) {
     history.go(-1);
   };
   return (
-    <div>
+    <div className="add">
       <h3>Update Post</h3>
       <form onSubmit={onSubmit}>
         <form ref={formElement}>

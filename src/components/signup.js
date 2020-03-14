@@ -29,7 +29,7 @@ function SignUp(props) {
   };
 
   return (
-    <div className="pa4 black-80">
+    <div className="pa4 black-80 up">
       <h3>New to Expat Journal? Signup Today!</h3>
       <form className="measure center" onSubmit={onSign}>
         <fieldset id="sign_up" class="ba b--transparent ph0 mh0">

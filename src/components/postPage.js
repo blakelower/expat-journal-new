@@ -22,7 +22,7 @@ function PostPage(props) {
   }
 
   return (
-    <div>
+    <div className="add">
         <Link to={"/postlist"}>
           <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">Go Home</button>
         </Link>
