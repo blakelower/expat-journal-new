@@ -1,10 +1,10 @@
 .nav{
     height: 65px;
     width: 100%;
-    background: white;
     display: flex;
     justify-content: space-between;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: transparent;
 }
 .logo-image{
     display: flex;
@@ -64,7 +64,7 @@ a {
     left: 0;
     width: 200px;
     height: 200px;
-    background: red;
+    background: purple;
     box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
     transition: .5s;
   }
@@ -106,4 +106,13 @@ a {
     100% {
       transform: translate(-50%, -75%) rotate(360deg);
     }
+  }
+
+  .text-in-box{
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    padding: 20px;
+    transform: translate(-50,-50);
   }

@@ -9,12 +9,12 @@ import PrivateRoute from "./components/privateRoute";
 import PostPage from "./components/postPage";
 import AddPost from "./components/addPost";
 import UpdatePost from "./components/updatePost";
-import NavBar from './components/navabr';
+// import NavBar from './components/navabr';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      {/* <NavBar /> */}
       <Switch>
         <Route exact path="/">
           <HomePage />
