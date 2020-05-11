@@ -1,118 +1,11 @@
-.nav{
-    height: 65px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: transparent;
-}
-.logo-image{
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    height: 2.1rem;
-}
-
-ul{
-    height: 100%;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding-inline-start: 0;
-    display: flex;
-    align-items: center; 
-    list-style-type: none;
-    padding: 0 20px 0 50px;
-    color: black;
-}
-
-.nav-list{
-    display: flex;
-    align-items: center;
-    padding-right: 30px;
-    color: black;
-}
-
-.about{
-    display: flex;
-    justify-content: space-around;
-    margin: 30px;
-}
-
-a {
-    position: relative;
-    padding: 20px 50px;
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: 200px;
-    overflow: hidden;
-    border-radius: 40px;
-    font-weight: 700;
-    text-align: center;
-  }
-  
-  a span {
-    position: relative;
-    color: #fff;
-    letter-spacing: 8px;
-    z-index: 1;
-  }
-  
-  a .liquid {
-    position: absolute;
-    top: -80px;
-    left: 0;
-    width: 200px;
-    height: 200px;
-    background: purple;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
-    transition: .5s;
-  }
-  
-  a .liquid::after,
-  a .liquid::before {
-    content: '';
-    width: 200%;
-    height: 200%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -75%);
-    background: #000;
-  }
-  
-  a .liquid::before {
-    
-    border-radius: 45%;
-    background: rgba(20, 20, 20, 1);
-    animation: animate 5s linear infinite;
-  }
-  
-  a .liquid::after {
-    
-    border-radius: 40%;
-    background: rgba(20, 20, 20, .5);
-    animation: animate 10s linear infinite;
-  }
-  
-  a:hover .liquid{
-    top: -120px;
-  }
-
-  @keyframes animate {
-    0% {
-      transform: translate(-50%, -75%) rotate(0deg);
+    html body{
+      background-color: #FCF9F9;
     }
-    100% {
-      transform: translate(-50%, -75%) rotate(360deg);
-    }
-  }
-
-  .text-in-box{
+    .text-in-box{
     color: #fff;
     font-size: 50px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    left: -1%;
+    left: 35%;
     top: 20%;
     position: absolute;
     padding: 20px;
@@ -132,11 +25,14 @@ a {
   }
 
   .home-container{
-    padding-top: -30px;
+    padding-top: -100px;
     display: flex;
     position: absolute;
-    top: 650px;
-    font-family: 'Raleway', sans-serif;;
+    top: 800px;
+    font-family:  'Raleway', serif;
+    animation: slide_up 1.8s ease-in;
+    color: black;
+    letter-spacing: 1px;
   }
 
   .home-img{
@@ -150,7 +46,169 @@ a {
     flex: 1 1 auto;
   }
 
+  @keyframes slide_up{
+      0%{
+          transform: translateY(250px);
+      }
+      100%{
+          transform: translateY(0);
+      }
+  }
 
+  .scrolled{
+      position: fixed;
+      background-color: #fff;
+  }
 
+  .nav{
+      width: 100%;
+      transition: 0.25s;
+      list-style: none;
+  }
 
-  
+li{
+    list-style: none;
+}
+
+a{
+    list-style: none;
+}
+
+.navbar-brand{
+  display: flex;
+  padding: 10px;
+  color: wheat;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 35px;
+}
+
+.nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-link li{
+    list-style-type: none;
+}
+
+.nav-link a {
+  color: black;
+  text-decoration: none;
+  letter-spacing: 4px;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  padding: 5px;
+}
+
+.nav-link a:hover{
+  color: wheat;
+}
+
+.tech-slideshow {
+  height: 200px;
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  padding: -10px;
+}
+
+.tech-slideshow > div {
+  height: 200px;
+  width: 2526px;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/collage.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+}
+.tech-slideshow .mover-1 {
+  animation: moveSlideshow 12s linear infinite;
+}
+.tech-slideshow .mover-2 {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  background-position: 0 -200px;
+  animation: moveSlideshow 15s linear infinite;
+}
+.tech-slideshow:hover .mover-2 {
+  opacity: 1;
+}
+
+@keyframes moveSlideshow {
+  100% { 
+    transform: translateX(-66.6666%);  
+  }
+}
+
+.testimonials {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	position: relative;
+	display: block;
+	width: 100%;
+	min-height: 250px;
+}
+
+.testimonials ul {
+	list-style: none;
+	padding: 0;
+}
+
+.testimonials li {
+	display: inline-block;
+	background-color: white;
+	margin: 50px 10px 10px 10px;
+	width: calc((100% - 55px) / 2);
+	height: 200px;
+	border: solid 1px #bdbdbd;
+	position: relative;
+	transition: ease-in-out .3s;
+}
+
+.testimonials li img {
+	height: 70px;
+	width: 70px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	border-radius: 50%;
+	box-shadow: 0px 0px 0px 15px #fff;
+	background-color: #fff;
+	transition: box-shadow 0.3s linear;
+}
+
+.testimonials li p {
+	position: absolute;
+	width: 70%;
+	text-align: center;
+	top: 50px;
+	left: 50%;
+	transform: translatex(-50%);
+	font-size: 15px;
+}
+
+.testimonials li h1 {
+	position: absolute;
+	text-decoration: bold;
+	bottom: 10px;
+	left: 50%;
+	transform: translatex(-50%);
+	font-size: 17px;
+}
+
+.testimonials li:hover {
+	background-color: #212121;
+	color: #fff;
+}
+
+.testimonials li:hover img {
+	box-shadow: 0px 0px 0px 2px #fff;
+}
+
+.test{
+  font-family: 'Times New Roman', Times, serif;
+}
