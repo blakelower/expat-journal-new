@@ -248,3 +248,116 @@ a{
   right: 3rem;
   bottom: 1rem;
 }
+
+input[type="text"],input[type="password"] {
+  display: block;
+  width: 309px;
+  height: 35px;
+  margin: 30px auto;
+  background: #edf6f9;
+  border: 0px;
+  padding: 5px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+input[type="text"]:focus, input[type="password"]:focus{
+  border: 2px solid #edf6f9
+}
+
+input[type="submit"]{
+  display: block;
+  background: #22223b;
+  width: 314px;
+  padding: 12px;
+  cursor: pointer;
+  color: #edf6f9;
+  border: 0px;
+  margin: auto;
+  font-size: 17px;
+  transition: all 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+input[type="submit"]:hover{
+  background: #4a4e69;
+}
+
+
+
+/*-----------ACTUAL LOGIN SECTION------------*/
+
+.login-card{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  grid-area: 1 / 2 / 2 / 3;
+
+  height: 600px;
+  width: 900px;
+
+  margin: auto;
+}
+
+.login-section{
+  color: white;
+  background: #c9ada7;
+  padding: 300px 50px;
+}
+#forgot-password{
+  text-decoration: none;
+  color: #ffffff;
+  float: right;
+  padding: 5px 20px;
+  font-style: italic;
+  font-size: .85em;
+  font-family: 'Roboto', sans-serif;
+  color: #edf6f9;
+}
+
+
+/*-----------ACCOUNT LOGIN SECTION------------*/
+.hello-world-section{
+  background: #f2e9e4;
+  padding: 150px 50px;
+  color: #22223b;
+  line-height: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+.hello-world-section h1{
+  font-size: 2.5em;
+  margin: 20px 0 40px  0;
+  color: #22223b;
+  font-family: 'Inknut Antiqua', serif;
+}
+#hello-img{
+height: 300px;
+width: auto;
+}
+
+/*-----------SOCIAL------------*/
+#social-btns{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#facebook-btn{
+  background: #3b5998;
+  margin: 20px 0;
+  width: 160px;
+}
+#google-btn{
+  background: #de5246;
+  margin: 20px 0;
+  width: 160px;
+}
+
+#credit{
+font-size: 12px;
+font-family: 'Roboto', sans-serif;
+font-style: italic;
+color: #22223b;
+}
