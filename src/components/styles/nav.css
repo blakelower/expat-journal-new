@@ -212,3 +212,39 @@ a{
 .test{
   font-family: 'Times New Roman', Times, serif;
 }
+
+.footer{
+  margin-bottom: 10rem;
+}
+
+
+.footer-getintouch{
+  margin: 0;
+  padding: 0;
+  color: #153638;
+  margin-left: 7rem;
+}
+.footer-author{
+  width: calc(100% + 5rem);
+  bottom: -3rem;
+  z-index: 20;
+  color: black;
+  position: relative;
+  left: -5rem;
+}
+
+.footer-author-details{
+  background: #fff;
+  padding: 6rem 3rem;
+  padding-left: 7rem;
+  padding-top: 1rem;
+}
+.footer-author-details a{
+  color: black;
+}
+
+.footer-signoff{
+  position: absolute;
+  right: 3rem;
+  bottom: 1rem;
+}
