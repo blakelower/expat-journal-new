@@ -156,7 +156,6 @@ function SignUp(props) {
         <p>
           Document your journey today, let's not forget these memories!
         </p>
-        <p id="credit">Illustration created by Leni Kauffman.</p>
       </article>
       <article className="login-section">
         <form className="login-form" onSubmit={onSign}>
