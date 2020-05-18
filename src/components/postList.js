@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getPost } from "../actions/actionCreators";
-
+import './styles/tachyon.css'
 function PostList(props) {
   const history = useHistory();
 
   useEffect(() => {
-    props.getPost();
+    getPost(); //removed props.getPost();
   }, []);
 
   const onLogout = e => {
@@ -18,8 +18,9 @@ function PostList(props) {
 
   return (
     <div className="back">
-      <h2>Welcome</h2>
-      <h3> Your Feed </h3>
+      <h2 className="intro"> Welcome Back.</h2>
+      <div className="yeah"></div>
+      <h3 className="message"> add a memory </h3>
       <Link to="/addpost">
         <button className="f6 grow no-underline br-pill ba ph3 pv2 mb2 dib dark-gray">Add New Journal Entry</button>
       </Link>

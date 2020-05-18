@@ -93,7 +93,6 @@ function HomePage() {
                         <a
                           className="ml-auto"
                           href="mailto:svs@company.com"
-                          target="_blank"
                         >
                           blakelower1999@gmail.com
                         </a>

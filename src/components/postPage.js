@@ -8,7 +8,7 @@ function PostPage(props) {
   const history = useHistory();
 
   useEffect(() => {
-    props.getIdPost(id);
+    getIdPost(id); //removed props.getIdPost
   }, [id]);
 
   function deletePost(id) {
